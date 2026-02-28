@@ -6,7 +6,7 @@ const transcriptCache = new Map();
 
 export const fetchTranscript = async (videoId) => {
   try {
-    // 🔥 Check cache first
+    //Check cache first
     if (transcriptCache.has(videoId)) {
       return transcriptCache.get(videoId);
     }
@@ -25,7 +25,7 @@ export const fetchTranscript = async (videoId) => {
       duration: item.duration,
     }));
 
-    // 🔥 Cache it
+    //Cache it
     transcriptCache.set(videoId, cleaned);
 
     return cleaned;

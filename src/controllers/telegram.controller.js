@@ -19,9 +19,8 @@ export const handleTelegramUpdate = async (req, res) => {
   };
 
   try {
-    // =========================================
-    // 1️⃣ HANDLE CALLBACK BUTTONS
-    // =========================================
+    
+    //HANDLE CALLBACK BUTTONS
     const callback = req.body.callback_query;
 
     if (callback) {
@@ -63,9 +62,7 @@ export const handleTelegramUpdate = async (req, res) => {
       return res.sendStatus(200);
     }
 
-    // =========================================
-    // 2️⃣ HANDLE NORMAL MESSAGES
-    // =========================================
+    //HANDLE NORMAL MESSAGES
     const message = req.body.message;
     if (!message || !message.text) return res.sendStatus(200);
 
@@ -73,9 +70,7 @@ export const handleTelegramUpdate = async (req, res) => {
     const text = message.text.trim();
     const session = getSession(chatId);
 
-    // =========================================
     // Language Command
-    // =========================================
     if (text === "/language") {
       await sendMessage(chatId, "Choose language:", {
         reply_markup: {
@@ -91,9 +86,7 @@ export const handleTelegramUpdate = async (req, res) => {
       return res.sendStatus(200);
     }
 
-    // =========================================
     // Summary Commands
-    // =========================================
     if (["/summary", "/deepdive", "/actionpoints"].includes(text)) {
       if (!session?.transcript) {
         await sendMessage(chatId, "Send a YouTube link first 🎥");
@@ -115,9 +108,7 @@ export const handleTelegramUpdate = async (req, res) => {
       return res.sendStatus(200);
     }
 
-    // =========================================
     // YouTube Link Handling
-    // =========================================
     if (isYouTubeLink(text)) {
       const videoId = extractVideoId(text);
 
@@ -162,9 +153,7 @@ export const handleTelegramUpdate = async (req, res) => {
       return res.sendStatus(200);
     }
 
-    // =========================================
     // Follow-up Q&A
-    // =========================================
     if (session?.transcript) {
       await sendMessage(chatId, "Analyzing question... 🔍");
 
@@ -179,9 +168,7 @@ export const handleTelegramUpdate = async (req, res) => {
       return res.sendStatus(200);
     }
 
-    // =========================================
     // Default Fallback
-    // =========================================
     await sendMessage(chatId, "Send a YouTube link to begin 🎥");
 
     return res.sendStatus(200);

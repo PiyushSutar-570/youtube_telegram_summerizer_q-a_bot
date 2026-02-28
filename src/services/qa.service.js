@@ -14,7 +14,7 @@ export const answerQuestion = async (
 
     const relevant = retrieveRelevantChunks(chunks, question);
 
-    // 🔥 NEVER early exit
+    //NEVER early exit
     const context = relevant.length
       ? relevant.join("\n\n").slice(0, 3000)
       : chunks.slice(0, 5).join("\n\n"); // fallback context
