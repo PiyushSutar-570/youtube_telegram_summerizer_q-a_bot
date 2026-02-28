@@ -1,0 +1,27 @@
+{
+  "name": "youtube_telegram_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "@openrouter/sdk": "^0.9.11",
+    "axios": "^1.13.5",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "youtube-captions-scraper": "^2.0.3",
+    "youtube-transcript-api": "^3.0.6",
+    "youtube-transcript-plus": "^1.2.0"
+  }
+}
