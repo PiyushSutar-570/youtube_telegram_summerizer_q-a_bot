@@ -122,6 +122,19 @@ This is a Retrieval-Augmented Generation (RAG) system.
 
 ---
 
+#images :
+
+<img width="1160" height="784" alt="image" src="https://github.com/user-attachments/assets/60aadb99-873e-4f4b-89f9-16bbb4af2d17" />
+
+<img width="1169" height="695" alt="image" src="https://github.com/user-attachments/assets/55719623-7a68-46b7-83ac-66d49e3fd90a" />
+
+<img width="1174" height="672" alt="image" src="https://github.com/user-attachments/assets/39dc746c-16a4-4a98-a9ee-b783dd7f03de" />
+
+<img width="1174" height="848" alt="image" src="https://github.com/user-attachments/assets/10c91764-2c07-438e-b0f8-ce1a8e82438b" />
+
+<img width="1175" height="563" alt="image" src="https://github.com/user-attachments/assets/c0f87110-841b-4773-ab3e-6d0985d42682" />
+
+
 # 🛠 Tech Stack
 
 - Node.js
